@@ -1,0 +1,6 @@
+services:
+  - type: worker
+    name: GoldPriceUpdater
+    env: python
+    buildCommand: ""
+    startCommand: python app/scheduler.py
