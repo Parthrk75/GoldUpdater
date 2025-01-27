@@ -4,11 +4,14 @@ FROM python:3.10-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the entire GoldPriceUpdater folder contents into the /app folder in the container
-COPY . /app/
+# Copy the app directory into the container
+COPY app /app
+
+# Copy the requirements file into the container
+COPY requirements.txt /app
 
 # Install the required Python dependencies
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Command to run the scheduler (scheduler.py is inside the app directory)
-CMD ["python", "/app/app/scheduler.py"]
+# Command to run the scheduler
+CMD ["python", "scheduler.py"]
