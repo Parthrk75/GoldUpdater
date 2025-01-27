@@ -1,5 +1,7 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from app.main import main
+# scheduler.py
+from main import main  # Assuming 'main.py' is in the same 'app' directory
+
 
 # Initialize the scheduler
 scheduler = BlockingScheduler()
